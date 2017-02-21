@@ -14,7 +14,9 @@ Set up a new account on Ethereum
 alias accnew1='geth --datadir /tmp67/why1 account new'
 ```
 
-Then see genesis2.json on how to alloc to the above account.
+The above command will return an account number which you will insert next.
+
+See genesis2.json on how to alloc to the above account.
 
 And run this command again:
 
@@ -26,4 +28,12 @@ Then go ahead and bring up your geth console with this command
 
 ```
 alias gethc='geth --datadir /tmp67/why1 --nodiscover --maxpeers 0 --rpc --rpccorsdomain "http://localhost:3000" console'
+```
+
+The following commands will show the amount of ether in the account
+
+```
+eth.accounts
+primary = eth.accounts[0]
+balance = web3.fromWei(eth.getBalance(primary), "ether");
 ```
